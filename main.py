@@ -1,4 +1,5 @@
-import pygame, sys
+import pygame
+import sys
 from grid import Grid
 from blocks import *
 
@@ -12,7 +13,8 @@ clock = pygame.time.Clock()
 
 game_grid = Grid()
 
-block = LBlock()
+block = TBlock()
+
 
 while True:
     for event in pygame.event.get():
