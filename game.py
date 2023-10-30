@@ -83,4 +83,5 @@ class Game:
 
     def draw(self, screen):
         self.grid.draw(screen)
-        self.current_block.draw(screen)
+        self.current_block.draw(screen, 11, 11)
+        self.next_block.draw(screen, 270, 270)
