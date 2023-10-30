@@ -1,11 +1,18 @@
 import pygame
 import sys
 from game import Game
+from colors import Colors
 
 pygame.init()
-dark_blue = (44, 44, 127)
 
-screen = pygame.display.set_mode((300, 600))
+title_font = pygame.font.Font(None, 40)
+score_surface = title_font.render("Score", True, Colors.white)
+next_surface = title_font.render("Next", True, Colors.white)
+
+score_rect = pygame.Rect(320, 55, 170, 60)
+next_rect = pygame.Rect(320, 215, 170, 180)
+
+screen = pygame.display.set_mode((500, 620))
 pygame.display.set_caption("Python Tetris")
 
 clock = pygame.time.Clock()
@@ -36,7 +43,11 @@ while True:
             game.move_down()
 
     # Drawing
-    screen.fill(dark_blue)
+    screen.fill(Colors.dark_blue)
+    screen.blit(score_surface, (365, 20, 50, 50))
+    screen.blit(next_surface, (375, 180, 50, 50))
+    pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 10)
+    pygame.draw.rect(screen, Colors.light_blue, next_rect, 0, 10)
     game.draw(screen)
 
     pygame.display.update()
