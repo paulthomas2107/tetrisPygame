@@ -36,6 +36,11 @@ class Grid:
         for column in range(self.num_cols):
             self.grid[row][column] = 0
 
+    def reset(self):
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                self.grid[row][column] = 0
+
     def move_row_down(self, row, num_rows):
         for column in range(self.num_cols):
             self.grid[row + num_rows][column] = self.grid[row][column]
